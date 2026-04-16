@@ -1,0 +1,61 @@
+{
+  "vehicles": [
+    {
+      "year": 2019,
+      "make": "Honda",
+      "model": "CR-V",
+      "mileage": 68500,
+      "color": "Gray",
+      "trim": "EX-L",
+      "plate": "X4T 9KR",
+      "serviceRecords": [
+        { "type": "OIL_CHANGE",    "date": "2024-06-15", "mileage": 62000, "cost": 4500, "description": "" },
+        { "type": "TIRE_ROTATION", "date": "2024-06-15", "mileage": 62000, "cost": 2500, "description": "" },
+        { "type": "OIL_CHANGE",    "date": "2024-10-20", "mileage": 65800, "cost": 4500, "description": "" },
+        { "type": "SERVICE_ITEM",  "date": "2024-10-20", "mileage": 65800, "cost": 3000, "name": "Brake inspection", "description": "Front pads at 40%, rears at 60%" },
+        { "type": "OIL_CHANGE",    "date": "2025-02-18", "mileage": 68500, "cost": 4800, "description": "" }
+      ]
+    },
+    {
+      "year": 2021,
+      "make": "Toyota",
+      "model": "RAV4",
+      "mileage": 31200,
+      "color": "Blueprint",
+      "trim": "XSE",
+      "plate": "M2R 7WJ",
+      "serviceRecords": [
+        { "type": "OIL_CHANGE",    "date": "2024-05-10", "mileage": 25000, "cost": 5500, "description": "" },
+        { "type": "TIRE_ROTATION", "date": "2024-05-10", "mileage": 25000, "cost": 2500, "description": "" },
+        { "type": "OIL_CHANGE",    "date": "2024-11-05", "mileage": 28700, "cost": 5500, "description": "" },
+        { "type": "SERVICE_ITEM",  "date": "2024-11-05", "mileage": 28700, "cost": 3500, "name": "Cabin air filter", "description": "Replaced cabin air filter" },
+        { "type": "OIL_CHANGE",    "date": "2025-03-20", "mileage": 31200, "cost": 5500, "description": "" }
+      ]
+    }
+  ],
+  "homes": [
+    {
+      "address": "742 Evergreen Terrace",
+      "yearBuilt": 1998,
+      "sqFootage": 1850,
+      "notes": "Single family, HOA managed",
+      "tasks": [
+        { "name": "Replace HVAC filter",      "frequency": "MONTHLY",    "description": "1-inch filter, 16x20" },
+        { "name": "Test smoke/CO detectors",  "frequency": "SEASONAL",   "description": "Test all units, replace batteries if needed" },
+        { "name": "Clean gutters",            "frequency": "BI_ANNUAL",  "description": "Front and back gutters" },
+        { "name": "Service HVAC system",      "frequency": "ANNUAL",     "description": "Professional tune-up before heating season" },
+        { "name": "Inspect roof",             "frequency": "ANNUAL",     "description": "Check for damage, loose shingles, and flashing" },
+        { "name": "Flush water heater",       "frequency": "ANNUAL",     "description": "Drain and flush sediment buildup" }
+      ],
+      "completions": [
+        { "taskIndex": 0, "date": "2026-03-01", "cost": 1200, "notes": "" },
+        { "taskIndex": 0, "date": "2026-02-01", "cost": 1200, "notes": "" },
+        { "taskIndex": 0, "date": "2026-01-01", "cost": 1200, "notes": "" },
+        { "taskIndex": 1, "date": "2026-01-15", "cost": 0,    "notes": "All units good, replaced batteries in two" },
+        { "taskIndex": 2, "date": "2025-11-10", "cost": 0,    "notes": "Cleared front and back, minor debris" },
+        { "taskIndex": 3, "date": "2025-10-05", "cost": 18900, "notes": "" },
+        { "taskIndex": 4, "date": "2025-09-20", "cost": 0,    "notes": "No issues found, minor debris cleared" }
+      ]
+    }
+  ]
+}

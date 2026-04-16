@@ -1,0 +1,170 @@
+{
+  "recruiters": [
+    { "name": "No Recruiter", "company": "", "phone": "", "email": "", "rating": 0 },
+    { "name": "Sarah Mitchell",  "company": "TechRecruit Partners",  "phone": "555-234-5678", "email": "smitchell@techrecruit.com",    "rating": 4 },
+    { "name": "James Chen",      "company": "Apex Talent Solutions",  "phone": "555-345-6789", "email": "jchen@apextalent.com",         "rating": 3 },
+    { "name": "Maria Rodriguez", "company": "NextGen Staffing",       "phone": "555-456-7890", "email": "mrodriguez@nextgenstaffing.com","rating": 5 }
+  ],
+  "jobs": [
+    {
+      "recruiterName": "Sarah Mitchell",
+      "jobTitle": "Senior Software Engineer",
+      "companyName": "Stripe",
+      "workFrom": "remote",
+      "dateApplied": "2026-01-08",
+      "companyCity": "San Francisco",
+      "companyState": "CA",
+      "status": "acked"
+    },
+    {
+      "recruiterName": "Sarah Mitchell",
+      "jobTitle": "Software Engineer II",
+      "companyName": "Plaid",
+      "workFrom": "hybrid",
+      "dateApplied": "2026-01-15",
+      "companyCity": "San Francisco",
+      "companyState": "CA",
+      "status": "acked"
+    },
+    {
+      "recruiterName": "James Chen",
+      "jobTitle": "Senior Backend Engineer",
+      "companyName": "Brex",
+      "workFrom": "remote",
+      "dateApplied": "2026-02-03",
+      "companyCity": "San Francisco",
+      "companyState": "CA",
+      "status": "interviewing"
+    },
+    {
+      "recruiterName": "Maria Rodriguez",
+      "jobTitle": "Software Engineer",
+      "companyName": "Gusto",
+      "workFrom": "remote",
+      "dateApplied": "2026-01-22",
+      "companyCity": "San Francisco",
+      "companyState": "CA",
+      "status": "acked"
+    },
+    {
+      "recruiterName": "No Recruiter",
+      "jobTitle": "Senior Software Engineer",
+      "companyName": "Shopify",
+      "workFrom": "remote",
+      "dateApplied": "2025-11-12",
+      "companyCity": "Ottawa",
+      "companyState": "ON",
+      "status": "acked"
+    },
+    {
+      "recruiterName": "No Recruiter",
+      "jobTitle": "Software Engineer",
+      "companyName": "Vercel",
+      "workFrom": "remote",
+      "dateApplied": "2025-11-20",
+      "companyCity": "San Francisco",
+      "companyState": "CA",
+      "status": "acked"
+    },
+    {
+      "recruiterName": "No Recruiter",
+      "jobTitle": "Software Engineer",
+      "companyName": "Linear",
+      "workFrom": "remote",
+      "dateApplied": "2025-12-01",
+      "companyCity": "San Francisco",
+      "companyState": "CA",
+      "status": "acked"
+    },
+    {
+      "recruiterName": "No Recruiter",
+      "jobTitle": "Senior Software Engineer",
+      "companyName": "Notion",
+      "workFrom": "hybrid",
+      "dateApplied": "2025-12-10",
+      "companyCity": "San Francisco",
+      "companyState": "CA",
+      "status": "acked"
+    },
+    {
+      "recruiterName": "No Recruiter",
+      "jobTitle": "Software Engineer",
+      "companyName": "Figma",
+      "workFrom": "remote",
+      "dateApplied": "2025-12-18",
+      "companyCity": "San Francisco",
+      "companyState": "CA",
+      "status": "acked"
+    },
+    {
+      "recruiterName": "No Recruiter",
+      "jobTitle": "Senior Software Engineer",
+      "companyName": "Rippling",
+      "workFrom": "remote",
+      "dateApplied": "2025-10-29",
+      "companyCity": "San Francisco",
+      "companyState": "CA",
+      "status": "declined"
+    },
+    {
+      "recruiterName": "No Recruiter",
+      "jobTitle": "Software Engineer II",
+      "companyName": "Ramp",
+      "workFrom": "remote",
+      "dateApplied": "2026-01-30",
+      "companyCity": "New York",
+      "companyState": "NY",
+      "status": "acked"
+    },
+    {
+      "recruiterName": "No Recruiter",
+      "jobTitle": "Senior Software Engineer",
+      "companyName": "Mercury",
+      "workFrom": "remote",
+      "dateApplied": "2026-02-11",
+      "companyCity": "San Francisco",
+      "companyState": "CA",
+      "status": "acked"
+    },
+    {
+      "recruiterName": "No Recruiter",
+      "jobTitle": "Software Engineer",
+      "companyName": "Retool",
+      "workFrom": "hybrid",
+      "dateApplied": "2026-02-19",
+      "companyCity": "San Francisco",
+      "companyState": "CA",
+      "status": "interviewing"
+    },
+    {
+      "recruiterName": "No Recruiter",
+      "jobTitle": "Software Engineer",
+      "companyName": "PostHog",
+      "workFrom": "remote",
+      "dateApplied": "2026-03-04",
+      "companyCity": "San Francisco",
+      "companyState": "CA",
+      "status": "acked"
+    },
+    {
+      "recruiterName": "No Recruiter",
+      "jobTitle": "Senior Software Engineer",
+      "companyName": "Loom",
+      "workFrom": "remote",
+      "dateApplied": "2025-11-05",
+      "companyCity": "San Francisco",
+      "companyState": "CA",
+      "status": "declined"
+    },
+    {
+      "recruiterName": "No Recruiter",
+      "jobTitle": "Software Engineer",
+      "companyName": "Descript",
+      "workFrom": "remote",
+      "dateApplied": "2025-10-14",
+      "companyCity": "San Francisco",
+      "companyState": "CA",
+      "status": "declined"
+    }
+  ]
+}

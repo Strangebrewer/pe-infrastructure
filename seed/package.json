@@ -1,0 +1,14 @@
+{
+  "name": "pe-seed",
+  "private": true,
+  "scripts": {
+    "seed": "tsx seed.ts",
+    "seed:reset": "tsx seed.ts --reset"
+  },
+  "dependencies": {
+    "tsx": "^4.19.2"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0"
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "projects": [
+    {
+      "name": "Basement Renovation",
+      "description": "Framing two interior walls with doors to divide the open basement into three separate spaces.",
+      "status": "IN_PROGRESS",
+      "dueDate": "2026-09-01",
+      "tasks": [
+        { "name": "Design wall layout and door placement",  "status": "DONE",        "description": "Measure space and finalize which walls go where" },
+        { "name": "Pull permits",                           "status": "IN_PROGRESS", "description": "Submit permit application to city" },
+        { "name": "Purchase lumber and materials",          "status": "TODO",        "description": "2x4 studs, drywall, hardware, and two pre-hung interior doors" },
+        { "name": "Frame first wall",                       "status": "TODO",        "description": "" },
+        { "name": "Frame second wall",                      "status": "TODO",        "description": "" },
+        { "name": "Rough electrical (if needed)",           "status": "TODO",        "description": "Add outlet or switch boxes before closing walls" },
+        { "name": "Hang drywall",                           "status": "TODO",        "description": "Both walls" },
+        { "name": "Tape, mud, and sand",                    "status": "TODO",        "description": "At least two coats of joint compound" },
+        { "name": "Install pre-hung doors",                 "status": "TODO",        "description": "" },
+        { "name": "Prime and paint",                        "status": "TODO",        "description": "" },
+        { "name": "Install trim and door hardware",         "status": "TODO",        "description": "Casing, baseboard, knobs" }
+      ]
+    },
+    {
+      "name": "Write a Novel",
+      "description": "Draft a full-length fantasy novel targeting 80,000 words.",
+      "status": "IN_PROGRESS",
+      "dueDate": "2027-01-01",
+      "tasks": [
+        { "name": "Outline plot and major story beats",    "status": "DONE",        "description": "Three-act structure with chapter-level beats" },
+        { "name": "Create character profiles",             "status": "DONE",        "description": "Main cast and key supporting characters" },
+        { "name": "Build world and setting notes",         "status": "IN_PROGRESS", "description": "Geography, magic system, factions, history" },
+        { "name": "Write Act 1 (chapters 1–7)",            "status": "TODO",        "description": "" },
+        { "name": "Write Act 2 (chapters 8–20)",           "status": "TODO",        "description": "" },
+        { "name": "Write Act 3 (chapters 21–28)",          "status": "TODO",        "description": "" },
+        { "name": "Complete first draft",                  "status": "TODO",        "description": "" },
+        { "name": "Self-edit and revise",                  "status": "TODO",        "description": "Read-through pass for plot holes and consistency" },
+        { "name": "Beta readers review",                   "status": "TODO",        "description": "" },
+        { "name": "Final revisions",                       "status": "TODO",        "description": "" }
+      ]
+    }
+  ]
+}

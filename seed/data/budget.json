@@ -1,0 +1,34 @@
+{
+  "accounts": [
+    { "name": "Checking", "owner": "mine", "type": "checking", "balance": 320000, "description": "" },
+    { "name": "Chase Sapphire Reserve", "owner": "mine", "type": "credit", "balance": 0, "description": "" },
+    { "name": "Citi Double Cash", "owner": "mine", "type": "credit", "balance": 0, "description": "" },
+    { "name": "Capital One Quicksilver", "owner": "mine", "type": "credit", "balance": 0, "description": "" },
+    { "name": "Checking", "owner": "hers", "type": "checking", "balance": 185000, "description": "" },
+    { "name": "Chase Freedom Unlimited", "owner": "hers", "type": "credit", "balance": 0, "description": "" },
+    { "name": "Discover it", "owner": "hers", "type": "credit", "balance": 0, "description": "" },
+    { "name": "American Express Blue Cash", "owner": "hers", "type": "credit", "balance": 0, "description": "" }
+  ],
+  "categories": [
+    { "name": "Food", "description": "Groceries and dining" },
+    { "name": "Gas", "description": "Fuel" },
+    { "name": "Other", "description": "Miscellaneous expenses" }
+  ],
+  "bills": [
+    { "name": "Mortgage",      "owner": "mine", "dueDay": 1,  "amount": 185000, "accountOwner": "mine", "description": "" },
+    { "name": "Comcast",       "owner": "mine", "dueDay": 5,  "amount": 8900,   "accountOwner": "mine", "description": "Internet" },
+    { "name": "Dominion",      "owner": "mine", "dueDay": 15, "amount": 12000,  "accountOwner": "mine", "description": "Electric" },
+    { "name": "Car Insurance",  "owner": "mine", "dueDay": 10, "amount": 14800,  "accountOwner": "mine", "description": "" },
+    { "name": "T-Mobile",      "owner": "mine", "dueDay": 20, "amount": 8500,   "accountOwner": "mine", "description": "Cell phones" },
+    { "name": "Student Loans", "owner": "mine", "dueDay": 25, "amount": 32000,  "accountOwner": "mine", "description": "" },
+    { "name": "Kaysville City","owner": "hers", "dueDay": 15, "amount": 6500,   "accountOwner": "hers", "description": "Utilities" },
+    { "name": "Student Loans", "owner": "hers", "dueDay": 25, "amount": 21000,  "accountOwner": "hers", "description": "" }
+  ],
+  "transactionConfig": {
+    "months": 6,
+    "randomSeed": 42,
+    "food":  { "minCount": 5,  "maxCount": 10, "minAmount": 1500,  "maxAmount": 14000 },
+    "gas":   { "minCount": 2,  "maxCount": 4,  "minAmount": 2800,  "maxAmount": 4400  },
+    "other": { "minCount": 4,  "maxCount": 8,  "minAmount": 800,   "maxAmount": 90000 }
+  }
+}
