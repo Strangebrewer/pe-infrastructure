@@ -11,7 +11,7 @@ for arg in "$@"; do
   esac
 done
 
-docker compose up -d ${MIGRATE:+--wait}
+docker compose up -d --wait
 
 if [ "$MIGRATE" = true ]; then
   (cd ../backend/go-auth && go run ./cmd/migrate up)
@@ -19,4 +19,4 @@ if [ "$MIGRATE" = true ]; then
   (cd ../backend/go-budget && go run ./cmd/migrate up)
 fi
 
-pnpm run start
+pnpm run serve
