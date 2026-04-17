@@ -297,6 +297,30 @@ async function seedBudget(token: string) {
 
   console.log('  Creating category transactions...');
   const cfg = data.transactionConfig;
+
+  console.log('  Creating income transactions...');
+  const incomeCfg = cfg.income as Record<string, { days: number[]; minAmount: number; maxAmount: number }>;
+  for (const month of months) {
+    const [year, mon] = month.split('-').map(Number);
+    for (const [owner, ic] of Object.entries(incomeCfg)) {
+      const checkingId = accountMap[`${owner}-checking`]?.id;
+      if (!checkingId) throw new Error(`No checking account found for owner ${owner}`);
+      for (const day of ic.days) {
+        const txn = await post(`${BUDGET_URL}/transactions`, {
+          destinationId: checkingId,
+          amount:        randInt(ic.minAmount, ic.maxAmount),
+          date:          `${year}-${String(mon).padStart(2, '0')}-${String(day).padStart(2, '0')}`,
+          description:   '',
+          income:        true,
+          owner,
+          shared:        false,
+          type:          'income',
+        }, token);
+        state.budget.transactionIds.push(txn.id);
+        saveState();
+      }
+    }
+  }
   const categoryDefs = [
     { catId: categoryMap['Food'],  ...cfg.food  },
     { catId: categoryMap['Gas'],   ...cfg.gas   },

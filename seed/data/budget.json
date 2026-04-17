@@ -29,6 +29,10 @@
     "randomSeed": 42,
     "food":  { "minCount": 5,  "maxCount": 10, "minAmount": 1500,  "maxAmount": 14000 },
     "gas":   { "minCount": 2,  "maxCount": 4,  "minAmount": 2800,  "maxAmount": 4400  },
-    "other": { "minCount": 4,  "maxCount": 8,  "minAmount": 800,   "maxAmount": 90000 }
+    "other": { "minCount": 4,  "maxCount": 8,  "minAmount": 800,   "maxAmount": 90000 },
+    "income": {
+      "mine": { "days": [1, 15], "minAmount": 372496, "maxAmount": 372502 },
+      "hers": { "days": [1, 15], "minAmount": 105000, "maxAmount": 120000 }
+    }
   }
 }
