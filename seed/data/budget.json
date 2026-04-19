@@ -1,13 +1,13 @@
 {
   "accounts": [
-    { "name": "Checking", "owner": "mine", "type": "checking", "balance": 320000, "description": "" },
-    { "name": "Chase Sapphire Reserve", "owner": "mine", "type": "credit", "balance": 0, "description": "" },
-    { "name": "Citi Double Cash", "owner": "mine", "type": "credit", "balance": 0, "description": "" },
-    { "name": "Capital One Quicksilver", "owner": "mine", "type": "credit", "balance": 0, "description": "" },
-    { "name": "Checking", "owner": "hers", "type": "checking", "balance": 185000, "description": "" },
-    { "name": "Chase Freedom Unlimited", "owner": "hers", "type": "credit", "balance": 0, "description": "" },
-    { "name": "Discover it", "owner": "hers", "type": "credit", "balance": 0, "description": "" },
-    { "name": "American Express Blue Cash", "owner": "hers", "type": "credit", "balance": 0, "description": "" }
+    { "name": "Checking", "owner": "mine", "type": "asset", "balance": 320000, "description": "" },
+    { "name": "Chase Sapphire Reserve", "owner": "mine", "type": "debt", "balance": 0, "description": "" },
+    { "name": "Citi Double Cash", "owner": "mine", "type": "debt", "balance": 0, "description": "" },
+    { "name": "Capital One Quicksilver", "owner": "mine", "type": "debt", "balance": 0, "description": "" },
+    { "name": "Checking", "owner": "hers", "type": "asset", "balance": 185000, "description": "" },
+    { "name": "Chase Freedom Unlimited", "owner": "hers", "type": "debt", "balance": 0, "description": "" },
+    { "name": "Discover it", "owner": "hers", "type": "debt", "balance": 0, "description": "" },
+    { "name": "American Express Blue Cash", "owner": "hers", "type": "debt", "balance": 0, "description": "" }
   ],
   "categories": [
     { "name": "Food", "description": "Groceries and dining" },

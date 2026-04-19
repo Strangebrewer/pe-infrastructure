@@ -260,8 +260,8 @@ async function seedBudget(token: string) {
   const billDueDayMap: Record<string, number> = {};
   console.log('  Creating bills...');
   for (const b of data.bills) {
-    const sourceId = accountMap[`${b.accountOwner}-checking`]?.id;
-    if (!sourceId) throw new Error(`No checking account found for owner ${b.accountOwner}`);
+    const sourceId = accountMap[`${b.accountOwner}-asset`]?.id;
+    if (!sourceId) throw new Error(`No asset account found for owner ${b.accountOwner}`);
     const created = await post(`${BUDGET_URL}/bills`, {
       name: b.name, description: b.description, sourceId, dueDay: b.dueDay, owner: b.owner,
     }, token);
@@ -303,8 +303,8 @@ async function seedBudget(token: string) {
   for (const month of months) {
     const [year, mon] = month.split('-').map(Number);
     for (const [owner, ic] of Object.entries(incomeCfg)) {
-      const checkingId = accountMap[`${owner}-checking`]?.id;
-      if (!checkingId) throw new Error(`No checking account found for owner ${owner}`);
+      const checkingId = accountMap[`${owner}-asset`]?.id;
+      if (!checkingId) throw new Error(`No asset account found for owner ${owner}`);
       for (const day of ic.days) {
         const txn = await post(`${BUDGET_URL}/transactions`, {
           destinationId: checkingId,
