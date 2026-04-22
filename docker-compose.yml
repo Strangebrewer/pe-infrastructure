@@ -1,23 +1,4 @@
 services:
-  postgres:
-    image: postgres:16-alpine
-    container_name: pe-postgres
-    environment:
-      POSTGRES_USER: ${POSTGRES_USER}
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
-      POSTGRES_DB: personal_enterprise
-      POSTGRES_HOST_AUTH_METHOD: trust
-    ports:
-      - "5434:5432"
-    volumes:
-      - postgres_data:/var/lib/postgresql/data
-      - ./postgres/init.sql:/docker-entrypoint-initdb.d/init.sql
-    healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER} -d personal_enterprise"]
-      interval: 5s
-      timeout: 5s
-      retries: 5
-
   mongodb:
     image: mongo:7
     container_name: pe-mongodb
@@ -31,18 +12,7 @@ services:
       timeout: 5s
       retries: 5
 
-  # Optional admin UIs — run with: docker compose --profile tools up
-  adminer:
-    image: adminer
-    container_name: pe-adminer
-    ports:
-      - "8080:8080"
-    profiles:
-      - tools
-    depends_on:
-      postgres:
-        condition: service_healthy
-
+  # Optional admin UI — run with: docker compose --profile tools up
   mongo-express:
     image: mongo-express
     container_name: pe-mongo-express
@@ -60,5 +30,4 @@ services:
         condition: service_healthy
 
 volumes:
-  postgres_data:
   mongodb_data:

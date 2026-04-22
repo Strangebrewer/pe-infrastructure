@@ -5,8 +5,7 @@
   "packageManager": "pnpm@10.12.4",
   "scripts": {
     "serve": "concurrently --kill-others-on-fail --names \"auth,job-search,budget,tracer\" --prefix-colors \"blue,green,yellow,magenta\" \"cd ../backend/go-auth && go run ./cmd/server\" \"cd ../backend/go-job-search && go run ./cmd/server\" \"cd ../backend/go-budget && go run ./cmd/server\" \"cd ../backend/go-tracer && go run ./cmd/server\"",
-    "start": "bash start-go.sh",
-    "start:m": "bash start-go.sh -m"
+    "start": "bash start-go.sh"
   },
   "devDependencies": {
     "concurrently": "^8.0.0"
