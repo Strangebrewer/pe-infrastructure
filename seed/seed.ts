@@ -281,13 +281,9 @@ async function seedBudget(token: string) {
 
   for (const billId of state.budget.billIds) {
     for (const month of months) {
-      const [year, mon] = month.split('-').map(Number);
-      const dueDay = billDueDayMap[billId] ?? 1;
-      const payDate = `${year}-${String(mon).padStart(2, '0')}-${String(dueDay).padStart(2, '0')}`;
       const txn = await post(`${BUDGET_URL}/bills/${billId}/pay`, {
         amount: billAmountMap[billId],
-        billMonth: month,
-        date: payDate,
+        month,
         description: '',
       }, token);
       state.budget.transactionIds.push(txn.id);
@@ -301,20 +297,19 @@ async function seedBudget(token: string) {
   console.log('  Creating income transactions...');
   const incomeCfg = cfg.income as Record<string, { days: number[]; minAmount: number; maxAmount: number }>;
   for (const month of months) {
-    const [year, mon] = month.split('-').map(Number);
     for (const [owner, ic] of Object.entries(incomeCfg)) {
       const checkingId = accountMap[`${owner}-asset`]?.id;
       if (!checkingId) throw new Error(`No asset account found for owner ${owner}`);
-      for (const day of ic.days) {
+      for (const _day of ic.days) {
         const txn = await post(`${BUDGET_URL}/transactions`, {
           destinationId: checkingId,
           amount:        randInt(ic.minAmount, ic.maxAmount),
-          date:          `${year}-${String(mon).padStart(2, '0')}-${String(day).padStart(2, '0')}`,
+          month,
           description:   '',
           income:        true,
           owner,
           shared:        false,
-          type:          'income',
+          type:          'credit',
         }, token);
         state.budget.transactionIds.push(txn.id);
         saveState();
@@ -328,24 +323,20 @@ async function seedBudget(token: string) {
   ];
 
   for (const month of months) {
-    const [year, mon] = month.split('-').map(Number);
-    const daysInMonth = new Date(year, mon, 0).getDate();
-
     for (const cat of categoryDefs) {
       const count = randInt(cat.minCount, cat.maxCount);
       for (let i = 0; i < count; i++) {
         const account = randPick(allAccounts);
-        const day = randInt(1, daysInMonth);
         const txn = await post(`${BUDGET_URL}/transactions`, {
           sourceId:    account.id,
           categoryId:  cat.catId,
           amount:      randInt(cat.minAmount, cat.maxAmount),
-          date:        `${year}-${String(mon).padStart(2, '0')}-${String(day).padStart(2, '0')}`,
+          month,
           description: '',
           income:      false,
           owner:       account.owner,
           shared:      false,
-          type:        'expense',
+          type:        'debit',
         }, token);
         state.budget.transactionIds.push(txn.id);
         saveState();
