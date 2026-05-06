@@ -257,18 +257,16 @@ async function seedBudget(token: string) {
   }
 
   const billAmountMap: Record<string, number> = {};
-  const billDueDayMap: Record<string, number> = {};
   console.log('  Creating bills...');
   for (const b of data.bills) {
     const sourceId = accountMap[`${b.accountOwner}-asset`]?.id;
     if (!sourceId) throw new Error(`No asset account found for owner ${b.accountOwner}`);
     const created = await post(`${BUDGET_URL}/bills`, {
-      name: b.name, description: b.description, sourceId, dueDay: b.dueDay, owner: b.owner,
+      name: b.name, description: b.description, sourceId, owner: b.owner,
     }, token);
     state.budget.billIds.push(created.id);
     saveState();
     billAmountMap[created.id] = b.amount;
-    billDueDayMap[created.id] = b.dueDay;
   }
 
   console.log('  Creating bill payment history...');
