@@ -1,8 +1,11 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import dotenv from 'dotenv';
+import { MongoClient } from 'mongodb';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
+dotenv.config({ path: path.join(__dirname, '.env.local') });
 
 // ---------------------------------------------------------------------------
 // Config
@@ -120,6 +123,55 @@ function loadState(): SeedState | null {
 
 function saveState() {
   fs.writeFileSync(STATE_FILE, JSON.stringify(state, null, 2));
+}
+
+// ---------------------------------------------------------------------------
+// Wipe
+// ---------------------------------------------------------------------------
+
+async function wipeAll() {
+  const client = new MongoClient('mongodb://localhost:27017');
+  try {
+    await client.connect();
+
+    console.log('  Wiping budget...');
+    const budget = client.db('budget');
+    await Promise.all([
+      budget.collection('accounts').deleteMany({}),
+      budget.collection('bills').deleteMany({}),
+      budget.collection('categories').deleteMany({}),
+      budget.collection('transactions').deleteMany({}),
+    ]);
+
+    console.log('  Wiping job_search...');
+    const jobSearch = client.db('job_search');
+    await Promise.all([
+      jobSearch.collection('jobs').deleteMany({}),
+      jobSearch.collection('recruiters').deleteMany({}),
+    ]);
+
+    console.log('  Wiping home_maintenance...');
+    const homeMaintenance = client.db('home_maintenance');
+    await Promise.all([
+      homeMaintenance.collection('vehicles').deleteMany({}),
+      homeMaintenance.collection('service_records').deleteMany({}),
+      homeMaintenance.collection('homes').deleteMany({}),
+      homeMaintenance.collection('home_tasks').deleteMany({}),
+      homeMaintenance.collection('home_completions').deleteMany({}),
+    ]);
+
+    console.log('  Wiping recipes...');
+    await client.db('recipes').collection('recipes').deleteMany({});
+
+    console.log('  Wiping project_mgr...');
+    const projectMgr = client.db('project_mgr');
+    await Promise.all([
+      projectMgr.collection('projects').deleteMany({}),
+      projectMgr.collection('tasks').deleteMany({}),
+    ]);
+  } finally {
+    await client.close();
+  }
 }
 
 // ---------------------------------------------------------------------------
@@ -563,14 +615,22 @@ async function seedProjects(token: string) {
 // ---------------------------------------------------------------------------
 
 async function main() {
+  const wipe  = process.argv.includes('--wipe');
   const reset = process.argv.includes('--reset');
 
-  console.log(`\npe-seed — ${reset ? 'RESET + seed' : 'seed'}\n`);
+  console.log(`\npe-seed — ${wipe ? 'WIPE + seed' : reset ? 'RESET + seed' : 'seed'}\n`);
+
+  if (wipe) {
+    console.log('Wiping all collections...');
+    await wipeAll();
+    if (fs.existsSync(STATE_FILE)) fs.unlinkSync(STATE_FILE);
+    console.log('Wipe complete.\n');
+  }
 
   console.log('Auth...');
   const { userId, token } = await setupUser();
 
-  if (reset) {
+  if (!wipe && reset) {
     const saved = loadState();
     if (!saved) {
       console.log('No seed-state.json found — nothing to reset. Seeding fresh.\n');

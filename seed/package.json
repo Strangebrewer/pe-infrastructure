@@ -3,9 +3,12 @@
   "private": true,
   "scripts": {
     "seed": "tsx seed.ts",
-    "seed:reset": "tsx seed.ts --reset"
+    "seed:reset": "tsx seed.ts --reset",
+    "seed:wipe": "tsx seed.ts --wipe"
   },
   "dependencies": {
+    "dotenv": "^16.0.0",
+    "mongodb": "^6.5.0",
     "tsx": "^4.19.2"
   },
   "devDependencies": {
